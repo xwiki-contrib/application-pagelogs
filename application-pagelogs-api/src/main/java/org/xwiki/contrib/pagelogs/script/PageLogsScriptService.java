@@ -51,4 +51,13 @@ public class PageLogsScriptService implements ScriptService
     {
         return this.manager.getCache(userReference, documentReference);
     }
+
+    /**
+     * @param userReference the user for which to return the logs for
+     * @param documentReference the document for which to return the logs for
+     */
+    public void waitForLogs(DocumentReference userReference, DocumentReference documentReference)
+    {
+        this.manager.waitForLogs(userReference, documentReference);
+    }
 }

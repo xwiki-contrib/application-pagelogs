@@ -91,6 +91,25 @@ public class PageLogsManager implements Initializable
         this.logQueueCache.set(getCacheKey(), logQueue);
     }
 
+    /**
+     * @param userReference the user for which to return the logs for
+     * @param documentReference the document for which to return the logs for
+     */
+    public void waitForLogs(DocumentReference userReference, DocumentReference documentReference)
+    {
+        long time = System.currentTimeMillis();
+        while (System.currentTimeMillis() - time < 10000) {
+            if (getCache(userReference, documentReference) != null) {
+                break;
+            }
+            try {
+                Thread.sleep(100L);
+            } catch (InterruptedException e) {
+                break;
+            }
+        }
+    }
+
     private String getCacheKey()
     {
         return getCacheKey(getCurrentUserReference(), getCurrentDocumentReference());
