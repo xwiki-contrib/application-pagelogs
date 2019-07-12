@@ -24,37 +24,25 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>org.xwiki.contrib</groupId>
-    <artifactId>parent-platform</artifactId>
-    <version>10.11</version>
+    <artifactId>application-pagelogs</artifactId>
+    <version>1.0-SNAPSHOT</version>
   </parent>
-  <artifactId>application-pagelogs</artifactId>
-  <version>1.0-SNAPSHOT</version>
-  <name>Page Logs Application - Parent POM</name>
-  <packaging>pom</packaging>
-  <description>Shows the rendering logs of a document within the XWiki UI</description>
-  <scm>
-    <connection>scm:git:git://github.com/xwiki-contrib/application-pagelogs.git</connection>
-    <developerConnection>scm:git:git@github.com:xwiki-contrib/application-pagelogs.git</developerConnection>
-    <url>https://github.com/xwiki-contrib/application-pagelogs/tree/master</url>
-    <tag>HEAD</tag>
-  </scm>
-  <developers>
-    <developer>
-      <id>aubincleme</id>
-      <name>Clément Aubin</name>
-    </developer>
-    <developer>
-      <id>vmassol</id>
-      <name>Vincent Massol</name>
-    </developer>
-  </developers>
+  <artifactId>application-pagelogs-api</artifactId>
+  <name>Page Logs Application - API</name>
+  <packaging>jar</packaging>
   <properties>
-    <xwiki.extension.category>application</xwiki.extension.category>
-    <xwiki.release.jira.skip>false</xwiki.release.jira.skip>
-    <xwiki.issueManagement.system>jira</xwiki.issueManagement.system>
-    <xwiki.issueManagement.url>https://jira.xwiki.org/browse/PAGELOGS</xwiki.issueManagement.url>
+    <xwiki.extension.name>Page Logs Application</xwiki.extension.name>
   </properties>
-  <modules>
-    <module>application-pagelogs-api</module>
-  </modules>
+  <dependencies>
+    <dependency>
+      <groupId>org.xwiki.commons</groupId>
+      <artifactId>xwiki-commons-job</artifactId>
+      <version>${commons.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.xwiki.commons</groupId>
+      <artifactId>xwiki-commons-logging-api</artifactId>
+      <version>${commons.version}</version>
+    </dependency>
+  </dependencies>
 </project>

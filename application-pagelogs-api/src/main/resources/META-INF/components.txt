@@ -1,0 +1,2 @@
+org.xwiki.contrib.pagelogs.internal.PageLogsEventListener
+org.xwiki.contrib.pagelogs.script.PageLogsScriptService
