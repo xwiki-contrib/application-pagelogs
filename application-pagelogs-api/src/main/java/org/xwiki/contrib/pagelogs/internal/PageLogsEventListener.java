@@ -24,6 +24,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.inject.Singleton;
 
 import org.xwiki.component.annotation.Component;
 import org.xwiki.context.Execution;
@@ -43,6 +44,7 @@ import org.xwiki.observation.event.Event;
  * @version $Id$
  */
 @Component
+@Singleton
 @Named("PageLogs")
 public class PageLogsEventListener implements EventListener
 {

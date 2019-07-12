@@ -20,6 +20,7 @@
 package org.xwiki.contrib.pagelogs.script;
 
 import javax.inject.Inject;
+import javax.inject.Singleton;
 
 import org.xwiki.component.annotation.Component;
 import org.xwiki.context.Execution;
@@ -32,6 +33,7 @@ import org.xwiki.script.service.ScriptService;
  * @version $Id$
  */
 @Component
+@Singleton
 public class PageLogsScriptService implements ScriptService
 {
     private static final String LOGGER_KEY = "PageLogsLogger";
