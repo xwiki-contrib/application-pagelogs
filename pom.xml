@@ -57,6 +57,7 @@
   </properties>
   <modules>
     <module>application-pagelogs-api</module>
+    <module>application-pagelogs-ui</module>
   </modules>
   <profiles>
     <profile>
