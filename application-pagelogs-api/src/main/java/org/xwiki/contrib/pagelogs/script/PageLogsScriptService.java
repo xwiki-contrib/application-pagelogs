@@ -24,8 +24,9 @@ import javax.inject.Named;
 import javax.inject.Singleton;
 
 import org.xwiki.component.annotation.Component;
-import org.xwiki.context.Execution;
+import org.xwiki.contrib.pagelogs.internal.PageLogsManager;
 import org.xwiki.logging.LogQueue;
+import org.xwiki.model.reference.DocumentReference;
 import org.xwiki.script.service.ScriptService;
 
 /**
@@ -38,16 +39,14 @@ import org.xwiki.script.service.ScriptService;
 @Named("pagelogs")
 public class PageLogsScriptService implements ScriptService
 {
-    private static final String LOGGER_KEY = "PageLogsLogger";
-
     @Inject
-    private Execution execution;
+    private PageLogsManager manager;
 
     /**
-     * @return the logs containing the execution of the current page rendering
+     * @return the logs containing the execution of the specified page rendering for the specified user
      */
-    public LogQueue getLogQueue()
+    public LogQueue getLogQueue(DocumentReference userReference, DocumentReference documentReference)
     {
-        return (LogQueue) this.execution.getContext().getProperty(LOGGER_KEY);
+        return this.manager.getCache(userReference, documentReference);
     }
 }

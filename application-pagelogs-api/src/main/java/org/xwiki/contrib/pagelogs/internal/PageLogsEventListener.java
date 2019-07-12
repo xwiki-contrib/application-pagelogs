@@ -58,6 +58,9 @@ public class PageLogsEventListener implements EventListener
     @Inject
     private Execution execution;
 
+    @Inject
+    private PageLogsManager manager;
+
     @Override
     public String getName()
     {
@@ -102,8 +105,9 @@ public class PageLogsEventListener implements EventListener
     {
         Integer counter = getProgressCounter();
         if (counter == 0) {
-            // TODO: save in the permanent directory for advanced use cases... (to be defined)
-            // FTM the Logger is in the execution context
+            // TODO: save in the permanent directory to use less memory
+            LogQueue logQueue = (LogQueue) this.execution.getContext().getProperty(LOGGER_KEY);
+            this.manager.addCacheEntry(logQueue);
             this.loggerManager.popLogListener();
             this.execution.getContext().removeProperty(COUNTER_KEY);
         } else {
