@@ -21,6 +21,7 @@ package org.xwiki.contrib.pagelogs.internal;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.UUID;
 
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -89,7 +90,7 @@ public class PageLogsEventListener implements EventListener
             Message message = (Message) data;
             if (message.getTranslationKey().equals("document.progress.render")) {
                 LogQueue logQueue = new LogQueue();
-                this.loggerManager.pushLogListener(new LoggerListener("PageLogsLoggerListener", logQueue));
+                this.loggerManager.pushLogListener(new LoggerListener(UUID.randomUUID().toString(), logQueue));
                 // Save the logger in the execution context so that we can save the logs in the end step
                 this.execution.getContext().setProperty(LOGGER_KEY, logQueue);
             } else {
