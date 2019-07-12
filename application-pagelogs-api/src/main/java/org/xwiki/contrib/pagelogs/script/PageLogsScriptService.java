@@ -43,6 +43,8 @@ public class PageLogsScriptService implements ScriptService
     private PageLogsManager manager;
 
     /**
+     * @param userReference the user for which to return the logs for
+     * @param documentReference the document for which to return the logs for
      * @return the logs containing the execution of the specified page rendering for the specified user
      */
     public LogQueue getLogQueue(DocumentReference userReference, DocumentReference documentReference)

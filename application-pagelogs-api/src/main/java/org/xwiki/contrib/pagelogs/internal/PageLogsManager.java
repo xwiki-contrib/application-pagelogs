@@ -36,6 +36,11 @@ import org.xwiki.model.reference.EntityReferenceSerializer;
 
 import com.xpn.xwiki.XWikiContext;
 
+/**
+ * Provide access to Page logs.
+ *
+ * @version $Id$
+ */
 @Component(roles = { PageLogsManager.class })
 @Singleton
 public class PageLogsManager implements Initializable
@@ -66,11 +71,21 @@ public class PageLogsManager implements Initializable
         }
     }
 
+    /**
+     * @param userReference the user for which to return the logs for
+     * @param documentReference the document for which to return the logs for
+     * @return the logs for the passed user and the passed document
+     */
     public LogQueue getCache(DocumentReference userReference, DocumentReference documentReference)
     {
         return this.logQueueCache.get(getCacheKey(userReference, documentReference));
     }
 
+    /**
+     * Register a new log entry for the current user and current document.
+     *
+     * @param logQueue the logs to register
+     */
     public void addCacheEntry(LogQueue logQueue)
     {
         this.logQueueCache.set(getCacheKey(), logQueue);
@@ -101,5 +116,4 @@ public class PageLogsManager implements Initializable
     {
         return (XWikiContext) this.execution.getContext().getProperty(XWikiContext.EXECUTIONCONTEXT_KEY);
     }
-
 }

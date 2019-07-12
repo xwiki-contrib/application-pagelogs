@@ -58,4 +58,12 @@
   <modules>
     <module>application-pagelogs-api</module>
   </modules>
+  <profiles>
+    <profile>
+      <id>integration-tests</id>
+      <modules>
+        <module>application-pagelogs-test</module>
+      </modules>
+    </profile>
+  </profiles>
 </project>
