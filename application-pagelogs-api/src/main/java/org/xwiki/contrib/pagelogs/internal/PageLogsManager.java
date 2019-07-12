@@ -104,7 +104,11 @@ public class PageLogsManager implements Initializable
 
     private DocumentReference getCurrentDocumentReference()
     {
-        return getXWikiContext().getDoc().getDocumentReference();
+        DocumentReference currentDocumentReference = null;
+        if (getXWikiContext().getDoc() != null) {
+            currentDocumentReference = getXWikiContext().getDoc().getDocumentReference();
+        }
+        return currentDocumentReference;
     }
 
     private DocumentReference getCurrentUserReference()
