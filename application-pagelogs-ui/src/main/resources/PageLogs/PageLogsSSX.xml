@@ -145,6 +145,10 @@
   width: 80%;
 }
 
+.modal-xlg ul.log {
+  max-height: 80%;
+}
+
 #pagelogs-indicator-error {
   color: red;
 }
