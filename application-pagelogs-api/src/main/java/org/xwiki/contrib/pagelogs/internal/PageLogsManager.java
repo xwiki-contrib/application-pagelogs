@@ -27,6 +27,7 @@ import org.xwiki.cache.Cache;
 import org.xwiki.cache.CacheException;
 import org.xwiki.cache.CacheManager;
 import org.xwiki.cache.config.CacheConfiguration;
+import org.xwiki.cache.eviction.LRUEvictionConfiguration;
 import org.xwiki.component.annotation.Component;
 import org.xwiki.component.phase.Initializable;
 import org.xwiki.context.Execution;
@@ -64,6 +65,13 @@ public class PageLogsManager implements Initializable
     {
         CacheConfiguration cacheConfiguration = new CacheConfiguration("pagelogs.logs");
 
+        LRUEvictionConfiguration lru = new LRUEvictionConfiguration();
+
+        // Set a 5 minute lifespan so that we don't use too much memory.
+        lru.setLifespan(5 * 60L)
+
+        cacheConfiguration.put(LRUEvictionConfiguration.CONFIGURATIONID, lru);
+
         try {
             this.logQueueCache = this.cacheManager.createNewCache(cacheConfiguration);
         } catch (CacheException e) {
@@ -98,7 +106,7 @@ public class PageLogsManager implements Initializable
     public void waitForLogs(DocumentReference userReference, DocumentReference documentReference)
     {
         long time = System.currentTimeMillis();
-        while (System.currentTimeMillis() - time < 10000) {
+        while (System.currentTimeMillis() - time < 10000L) {
             if (getCache(userReference, documentReference) != null) {
                 break;
             }
