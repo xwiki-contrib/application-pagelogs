@@ -68,7 +68,7 @@ public class PageLogsManager implements Initializable
         LRUEvictionConfiguration lru = new LRUEvictionConfiguration();
 
         // Set a 5 minute lifespan so that we don't use too much memory.
-        lru.setLifespan(5 * 60L)
+        lru.setLifespan(5 * 60);
 
         cacheConfiguration.put(LRUEvictionConfiguration.CONFIGURATIONID, lru);
 
