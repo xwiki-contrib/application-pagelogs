@@ -45,6 +45,31 @@
   </properties>
   <dependencies>
     <!-- ================================
+         Dependencies for tested features
+         ================================ -->
+    <dependency>
+      <groupId>org.xwiki.contrib.pagelogs</groupId>
+      <artifactId>application-pagelogs-ui</artifactId>
+      <version>${project.version}</version>
+      <type>xar</type>
+      <!-- Since we're forcing the version of XS, we need to exclude all deps from our tested module as it's depending
+           on an older version of Platform and thus this results in dependency version conflicts -->
+      <exclusions>
+        <exclusion>
+          <groupId>org.xwiki.commons</groupId>
+          <artifactId>xwiki-commons-job</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.xwiki.commons</groupId>
+          <artifactId>xwiki-commons-logging-api</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.xwiki.platform</groupId>
+          <artifactId>xwiki-platform-oldcore</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <!-- ================================
          Test only dependencies
          ================================ -->
     <dependency>
