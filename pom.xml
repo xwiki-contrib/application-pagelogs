@@ -29,7 +29,7 @@
   </parent>
   <groupId>org.xwiki.contrib.pagelogs</groupId>
   <artifactId>application-pagelogs</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.0</version>
   <name>Page Logs Application - Parent POM</name>
   <packaging>pom</packaging>
   <description>Shows the rendering logs of a document within the XWiki UI</description>
@@ -37,7 +37,7 @@
     <connection>scm:git:git://github.com/xwiki-contrib/application-pagelogs.git</connection>
     <developerConnection>scm:git:git@github.com:xwiki-contrib/application-pagelogs.git</developerConnection>
     <url>https://github.com/xwiki-contrib/application-pagelogs/tree/master</url>
-    <tag>HEAD</tag>
+    <tag>application-pagelogs-1.0</tag>
   </scm>
   <developers>
     <developer>
