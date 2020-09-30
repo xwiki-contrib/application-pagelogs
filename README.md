@@ -5,11 +5,11 @@ Shows the rendering logs of a page within the XWiki UI
 * Project Leads:
   * [Clément Aubin](http://www.xwiki.org/xwiki/bin/view/XWiki/caubin)
   * [Vincent Massol](http://www.xwiki.org/xwiki/bin/view/XWiki/vmassol)
-* Documentation & Download: N/A
+* [Documentation & Download](https://extensions.xwiki.org/xwiki/bin/view/Extension/Page%20Logs%20Application%20-%20UI/)
 * [Issue Tracker](http://jira.xwiki.org/browse/PAGELOGS)
 * Communication: [Mailing List](http://dev.xwiki.org/xwiki/bin/view/Community/MailingLists), [IRC](http://dev.xwiki.org/xwiki/bin/view/Community/IRC)
 * [Development Practices](http://dev.xwiki.org)
-* Minimal XWiki version supported: XWiki 10.11
+* Minimal XWiki version supported: XWiki 11.10
 * License: LGPL 2.1
 * Translations: N/A
 * Sonar Dashboard: N/A
