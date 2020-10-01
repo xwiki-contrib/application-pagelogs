@@ -34,7 +34,7 @@
   <properties>
     <!-- Name & Category to display by the Extension Manager -->
     <xwiki.extension.name>Page Logs Application</xwiki.extension.name>
-    <xwiki.extension.category>authenticator</xwiki.extension.category>
+    <xwiki.extension.category>application</xwiki.extension.category>
   </properties>
   <dependencies>
     <dependency>
