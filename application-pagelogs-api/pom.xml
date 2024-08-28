@@ -25,7 +25,7 @@
   <parent>
     <groupId>org.xwiki.contrib.pagelogs</groupId>
     <artifactId>application-pagelogs</artifactId>
-    <version>1.1-SNAPSHOT</version>
+    <version>1.0.1</version>
   </parent>
   <artifactId>application-pagelogs-api</artifactId>
   <name>Page Logs Application - API</name>
