@@ -51,9 +51,9 @@
   </developers>
   <properties>
     <xwiki.extension.category>application</xwiki.extension.category>
+
     <xwiki.release.jira.skip>false</xwiki.release.jira.skip>
-    <xwiki.issueManagement.system>jira</xwiki.issueManagement.system>
-    <xwiki.issueManagement.url>https://jira.xwiki.org/browse/PAGELOGS</xwiki.issueManagement.url>
+    <xwiki.issueManagement.jira.id>PAGELOGS</xwiki.issueManagement.jira.id>
   </properties>
   <modules>
     <module>application-pagelogs-api</module>
