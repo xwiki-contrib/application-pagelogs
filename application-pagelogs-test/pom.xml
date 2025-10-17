@@ -27,7 +27,6 @@
     <artifactId>application-pagelogs</artifactId>
     <version>1.0.2-SNAPSHOT</version>
   </parent>
-  <groupId>org.xwiki.contrib.pagelogs</groupId>
   <artifactId>application-pagelogs-test</artifactId>
   <name>Page Logs Application - Tests</name>
   <packaging>pom</packaging>
